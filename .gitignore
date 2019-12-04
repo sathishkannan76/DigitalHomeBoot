@@ -1,0 +1,14 @@
+
+target/classes/application.properties
+target/classes/com/digital/home/controller/UserController.class
+*.class
+*.MF
+target/classes/META-INF/maven/com.digital/DigitalHomeBoot/pom.properties
+target/classes/META-INF/maven/com.digital/DigitalHomeBoot/pom.xml
+*.jar
+*.original
+target/maven-archiver/pom.properties
+*.lst
+*.txt
+target/surefire-reports/TEST-com.digital.home.DigitalHomeBootApplicationTests.xml
+*.prefs
