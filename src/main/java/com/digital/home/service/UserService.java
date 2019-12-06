@@ -10,6 +10,8 @@ import com.digital.home.repository.UserRepository;
 @Service
 public class UserService {
 	
+	EmailService emailService = new EmailService();
+	
 	public List<User> getUsers(UserRepository userRepo){
 		return userRepo.findAll();
 	}
@@ -22,18 +24,23 @@ public class UserService {
 	public User getUser(UserRepository userRepo, User user) {
 		return null;
 	}
-	
 
 	public User registerUser(User user, UserRepository authRepo) {
-		return null;
+		User registeredUser = null;
+		if(authRepo.findByEmail(user.getEmail()) == null) {
+			registeredUser = authRepo.save(user);
+			emailService.sendEmail(registeredUser);
+		}
+		System.out.println("registeredUser -> " + registeredUser);
+		return registeredUser;
 	}
 
 	public User authenticateUser(User user, UserRepository authRepo) {
-		return null;
-	}
+		//return authRepo.findOne(user.getUserId());
+				return authRepo.findByEmail(user.getEmail());	}
 
 	public User confirmRegistration(String email, UserRepository authRepo) {
-		return null;
+		return authRepo.findByEmail(email);
 	}
 
 }
