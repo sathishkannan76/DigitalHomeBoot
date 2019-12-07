@@ -14,7 +14,13 @@ public class ProjectTypeService {
 		return projectTypeRepo.findAll();
 	}
 	
-	public ProjectType addProjectType(ProjectTypeRepository projectTypeRepo, ProjectType projectType) {
-		return projectTypeRepo.save(projectType);
+	public List<ProjectType> addProjectType(ProjectTypeRepository projectTypeRepo, ProjectType projectType) {
+		projectTypeRepo.save(projectType);
+		return projectTypeRepo.findAll();
+	}
+
+	public List<ProjectType> deleteProjectType(ProjectTypeRepository projectTypeRepo, ProjectType projectType) {
+		projectTypeRepo.delete(projectType);
+		return projectTypeRepo.findAll();
 	}
 }

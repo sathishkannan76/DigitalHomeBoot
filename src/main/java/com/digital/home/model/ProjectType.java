@@ -12,6 +12,24 @@ public class ProjectType {
 	
 	@Id @GeneratedValue
 	private long projectTypeID;
-	private String projectName;
-	private String projectDescription;
+	private String name;
+	private String description;
+	public long getProjectTypeID() {
+		return projectTypeID;
+	}
+	public void setProjectTypeID(long projectTypeID) {
+		this.projectTypeID = projectTypeID;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
 }
