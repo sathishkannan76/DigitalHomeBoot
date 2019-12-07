@@ -22,12 +22,17 @@ public class ProjectTypeController {
 	ProjectTypeService projectTypeService = new ProjectTypeService();
 
 	@PostMapping("/addProjectType")
-	public ProjectType addProjectType(@RequestBody ProjectType projectType) {
+	public List<ProjectType> addProjectType(@RequestBody ProjectType projectType) {
 		return projectTypeService.addProjectType(projectTypeRepo, projectType);
 	}
 	
+	@PostMapping("/deleteProjectType")
+	public List<ProjectType> deleteProjectType(@RequestBody ProjectType projectType) {
+		return projectTypeService.deleteProjectType(projectTypeRepo, projectType);
+	}
+	
 	@GetMapping("/getAllProjectTypes")
-	public List<ProjectType> getAllProjectTypes() {
+	public List<ProjectType> getAllProjectTypeaas() {
 		return projectTypeService.getAllProjectTypes(projectTypeRepo);
 	}
 }
