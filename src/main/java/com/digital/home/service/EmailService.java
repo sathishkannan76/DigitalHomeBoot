@@ -22,8 +22,8 @@ public class EmailService {
 		prop.put("mail.smtp.host", "smtp.gmail.com");
 		prop.put("mail.smtp.port", "587");
 		prop.put("mail.smtp.ssl.trust", "*");
-		String host = "http://167.99.153.42:4200/";
-		//String host = "http://localhost:4200/";
+		//String host = "http://167.99.153.42:4200/";
+		String host = "http://localhost:4200/";
 		
 		Session session = Session.getInstance(prop, new Authenticator() {
 			@Override
