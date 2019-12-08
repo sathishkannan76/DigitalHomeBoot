@@ -8,7 +8,7 @@ import com.digital.home.model.ProjectType;
 import com.digital.home.repository.ProjectTypeRepository;
 
 @Service
-public class ProjectTypeService {
+public class ProjectService {
 
 	public List<ProjectType> getAllProjectTypes(ProjectTypeRepository projectTypeRepo) {
 		return projectTypeRepo.findAll();

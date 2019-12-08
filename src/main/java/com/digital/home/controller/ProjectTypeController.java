@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.digital.home.model.ProjectType;
 import com.digital.home.repository.ProjectTypeRepository;
-import com.digital.home.service.ProjectTypeService;
+import com.digital.home.service.ProjectService;
 
 @CrossOrigin()
 @RestController
@@ -19,7 +19,7 @@ public class ProjectTypeController {
 	
 	@Autowired
 	ProjectTypeRepository projectTypeRepo;
-	ProjectTypeService projectTypeService = new ProjectTypeService();
+	ProjectService projectTypeService = new ProjectService();
 
 	@PostMapping("/addProjectType")
 	public List<ProjectType> addProjectType(@RequestBody ProjectType projectType) {
