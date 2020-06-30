@@ -1,4 +1,6 @@
-
+target/*
+.idea/*
+*.iml
 target/classes/application.properties
 target/classes/com/digital/home/controller/UserController.class
 *.class
