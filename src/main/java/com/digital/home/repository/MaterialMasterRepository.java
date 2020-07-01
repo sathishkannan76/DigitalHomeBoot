@@ -12,6 +12,6 @@ import java.util.List;
 public interface MaterialMasterRepository extends JpaRepository<MaterialMaster, Long> {
 
     @Query(value = "SELECT * FROM material_master mm where mm.projectId = :projectId", nativeQuery = true)
-    public List<MaterialMaster> findByProjectId(@Param("projectId") long projectId);
+    List<MaterialMaster> findByProjectId(@Param("projectId") long projectId);
 
 }

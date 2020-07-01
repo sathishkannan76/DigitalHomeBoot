@@ -9,17 +9,15 @@ public class LabourDetailsKey implements Serializable {
     private long projectId;
     private Date transactionDate;
     private long labourTypeId;
-    private String name;
 
     public LabourDetailsKey() {
 
     }
 
-    public LabourDetailsKey(long projectId, Date transactionDate, long labourTypeId, String name) {
+    public LabourDetailsKey(long projectId, Date transactionDate, long labourTypeId) {
         this.projectId = projectId;
         this.transactionDate = transactionDate;
         this.labourTypeId = labourTypeId;
-        this.name = name;
     }
 
     @Override
@@ -29,12 +27,11 @@ public class LabourDetailsKey implements Serializable {
         LabourDetailsKey that = (LabourDetailsKey) o;
         return projectId == that.projectId &&
                 labourTypeId == that.labourTypeId &&
-                transactionDate.equals(that.transactionDate) &&
-                name.equals(that.name);
+                transactionDate.equals(that.transactionDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(projectId, transactionDate, labourTypeId, name);
+        return Objects.hash(projectId, transactionDate, labourTypeId);
     }
 }
