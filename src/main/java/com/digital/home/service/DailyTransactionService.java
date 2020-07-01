@@ -27,6 +27,14 @@ public class DailyTransactionService {
     @Autowired
     private LabourMasterRepository labourMasterRepository;
 
+    public boolean postDailyTransactionDetails(long projectId, DailyTransaction dailyTransaction) {
+        List<MaterialDetails> materialDetailsList =
+                materialDetailsRepository.saveAll(dailyTransaction.getMaterialDetailsList());
+        List<LabourDetails> labourDetailsList =
+                labourDetailsRepository.saveAll(dailyTransaction.getLabourDetailsList());
+        return true;
+    }
+
     public DailyTransaction getDailyTransactionDetails(long projectId) {
 
         DailyTransaction dailyTransaction = new DailyTransaction();
