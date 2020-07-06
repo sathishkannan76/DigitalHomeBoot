@@ -21,6 +21,15 @@ public class MaterialDetails {
     private int unitsUsed;
     private double actualCost;
     private String vendorName;
+    private long materialUOMID;
+
+    public long getMaterialUOMID() {
+        return materialUOMID;
+    }
+
+    public void setMaterialUOMID(long materialUOMID) {
+        this.materialUOMID = materialUOMID;
+    }
 
     public long getProjectId() {
         return projectId;

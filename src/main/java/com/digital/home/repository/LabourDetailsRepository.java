@@ -8,11 +8,15 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
+import java.util.Date;
 import java.util.List;
 
 @Repository
 public interface LabourDetailsRepository extends JpaRepository<LabourDetails, LabourDetailsKey> {
 
-    @Query(value = "SELECT * FROM labour_details ld where ld.projectId = :projectId", nativeQuery = true)
-    List<LabourDetails> findByProjectId(@Param("projectId") long projectId);
+    @Query(value = "SELECT * FROM labour_details where project_id = :projectId " +
+            "AND transaction_date BETWEEN ':fromDate' AND ':toDate'", nativeQuery = true)
+    List<LabourDetails> findByProjectIdAndTransactionDate(@Param("projectId") long projectId,
+                                                          @Param("fromDate") Date fromDate,
+                                                          @Param("toDate") Date toDate);
 }

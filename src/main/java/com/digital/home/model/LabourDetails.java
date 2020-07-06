@@ -24,6 +24,15 @@ public class LabourDetails {
     private double wage;
     private double plannedSalary;
     private double actualSalary;
+    private String contactNumber;
+
+    public String getContactNumber() {
+        return contactNumber;
+    }
+
+    public void setContactNumber(String contactNumber) {
+        this.contactNumber = contactNumber;
+    }
 
     public long getProjectId() {
         return projectId;

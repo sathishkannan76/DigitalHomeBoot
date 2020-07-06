@@ -16,10 +16,16 @@ public class DailyTransactionController {
         return dailyTransactionService.getDailyTransactionDetails(projectId);
     }
 
-    @PostMapping("/daily-transactions/{projectId}")
-    public boolean postDailyTransaction(@PathVariable(value = "projectId") Long projectId, @
+    @PostMapping("/labour-transactions/{projectId}")
+    public boolean postLabourTransaction(@PathVariable(value = "projectId") Long projectId, @
             RequestBody DailyTransaction dailyTransaction) {
-        return dailyTransactionService.postDailyTransactionDetails(projectId, dailyTransaction);
+        return dailyTransactionService.postLabourTransactions(projectId, dailyTransaction);
+    }
+
+    @PostMapping("/material-transactions/{projectId}")
+    public boolean postMaterialTransaction(@PathVariable(value = "projectId") Long projectId, @
+            RequestBody DailyTransaction dailyTransaction) {
+        return dailyTransactionService.postMaterialTransactions(projectId, dailyTransaction);
     }
 
 }

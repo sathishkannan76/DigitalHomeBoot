@@ -10,10 +10,6 @@ public class LabourDetailsKey implements Serializable {
     private Date transactionDate;
     private long labourTypeId;
 
-    public LabourDetailsKey() {
-
-    }
-
     public LabourDetailsKey(long projectId, Date transactionDate, long labourTypeId) {
         this.projectId = projectId;
         this.transactionDate = transactionDate;

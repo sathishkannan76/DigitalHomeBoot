@@ -10,10 +10,6 @@ public class MaterialDetailsKey implements Serializable {
     private Date transactionDate;
     private long materialTypeId;
 
-    public MaterialDetailsKey() {
-
-    }
-
     public MaterialDetailsKey(long projectId, Date transactionDate, long materialTypeId) {
         this.projectId = projectId;
         this.transactionDate = transactionDate;
