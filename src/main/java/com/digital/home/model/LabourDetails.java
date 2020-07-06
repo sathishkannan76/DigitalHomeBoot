@@ -19,12 +19,13 @@ public class LabourDetails {
     private long labourTypeId;
     @Id
     private String name;
+    @Id
+    private String contactNumber;
 
     private float shift;
     private double wage;
     private double plannedSalary;
     private double actualSalary;
-    private String contactNumber;
 
     public String getContactNumber() {
         return contactNumber;
